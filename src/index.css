@@ -41,6 +41,7 @@ body[data-theme='dark'] {
   --header-color: var(--white);
   --search-bg: var(--gray-400);
   --shadow: 0;
+  --search-color: var(--white);
 }
 
 body[data-theme='light'] {
@@ -49,7 +50,8 @@ body[data-theme='light'] {
   --header-color: var(--gray-300);
   background-color: var(--gray-50);
   --search-bg: var(--white);
-  --shadow: var(var(--shadow))
+  --shadow: var(var(--shadow));
+  --search-color: var(--gray-300);
 }
 
 a {
