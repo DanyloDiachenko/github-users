@@ -25,12 +25,13 @@ body {
   --error-color: #F74646;
 
   --shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+
+  --border-rad: 15px;
 }
 
 body {
   font-family: 'Space Mono', monospace;
   font-weight: 400;
-  background-color: var(--gray-50);
 }
 
 body[data-theme='dark'] {
@@ -38,12 +39,17 @@ body[data-theme='dark'] {
   --switcher-color: var(--white);
   --switcher-color-hover: var(--gray-100);
   --header-color: var(--white);
+  --search-bg: var(--gray-400);
+  --shadow: 0;
 }
 
 body[data-theme='light'] {
   --switcher-color: var(--gray-100);
   --switcher-color-hover: var(--gray-300);
   --header-color: var(--gray-300);
+  background-color: var(--gray-50);
+  --search-bg: var(--white);
+  --shadow: var(var(--shadow))
 }
 
 a {

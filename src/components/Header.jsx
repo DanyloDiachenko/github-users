@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { ReactComponent as MoonIcon } from '../icons/icon-moon.svg';
 import { ReactComponent as SunIcon } from '../icons/icon-sun.svg';
 
-const HeaderWrapper = styled.header`
+const Wrapper = styled.header`
     max-width: 690px;
     margin: 40px auto;
-    border: 2px solid blue;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,12 +50,12 @@ export const Header = () => {
     }, [theme])
 
     return (
-        <HeaderWrapper>
+        <Wrapper>
             <Title>devfinder</Title>
             <ThemeSwitcher onClick={() => setTheme(theme == 'light' ? 'dark' : 'light')}>
                 <ThemeText>{theme == 'light' ? 'Dark' : 'Light'}</ThemeText>
                 <ThemeIcon>{theme == 'light' ? <MoonIcon /> : <SunIcon />}</ThemeIcon>
             </ThemeSwitcher>
-        </HeaderWrapper>
+        </Wrapper>
     );
 };
