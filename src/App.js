@@ -1,6 +1,10 @@
+import { Header } from './components/Header';
+
 function App() {
   return (
-    2321
+    <>
+      <Header />
+    </>
   );
 }
 
