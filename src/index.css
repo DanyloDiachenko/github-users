@@ -48,6 +48,7 @@ body[data-theme='dark'] {
   --stat-bg: var(--gray-500);
   --value-color: var(--white);
   --description-color: var(--white);
+  --info-color: var(--white);
 }
 
 body[data-theme='light'] {
@@ -63,4 +64,5 @@ body[data-theme='light'] {
   --stat-bg: var(--gray-50);
   --value-color: black;
   --description-color: var(--gray-200);
+  --info-color: var(--gray-200);
 }

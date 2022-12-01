@@ -93,9 +93,32 @@ const ValueInfo = styled.div`
     margin-top: 5px;
 `;
 
-const InfoItem = styled.span`
+const InfoItemTrue = styled.span`
     display: flex;
+    align-items: center;
     margin-top: 15px;
+    color: var(--info-color);
+    font-size: 14px;
+    
+    & > svg {
+        fill: var(--info-color);
+        margin-right: 20px;
+    };
+
+`;
+const InfoItemFalse = styled.span`
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: var(--info-color);
+    opacity: 0.75;
+    font-size: 14px;
+
+    & > svg {
+        fill: var(--info-color);
+        opacity: 0.75;
+        margin-right: 20px;
+    };
 `;
 
 export const MainInfo = (props) => {
@@ -133,20 +156,44 @@ export const MainInfo = (props) => {
                 </div>
                 <div className='col-12 row'>
                     <div className='col-lg-5 col-sm-12'>
-                        <InfoItem>
-                            <IconLocation />
-                        </InfoItem>
-                        <InfoItem>
-                            <IconWebsite />
-                        </InfoItem>
+                        {props.location ? (
+                            <InfoItemTrue>
+                                <IconLocation />{props.location}
+                            </InfoItemTrue>
+                        ) : (
+                            <InfoItemFalse>
+                                <IconLocation />Not Available
+                            </InfoItemFalse>
+                        )}
+                        {props.blog ? (
+                            <InfoItemTrue>
+                                <IconWebsite />{props.blog}
+                            </InfoItemTrue>
+                        ) : (
+                            <InfoItemFalse>
+                                <IconWebsite />Not Available
+                            </InfoItemFalse>
+                        )}
                     </div>
                     <div className='col-lg-5 col-sm-12'>
-                        <InfoItem>
-                            <IconTwitter />
-                        </InfoItem>
-                        <InfoItem>
-                            <IconCompany />
-                        </InfoItem>
+                        {props.twitter_username ? (
+                            <InfoItemTrue>
+                                <IconTwitter />{props.twitter_username}
+                            </InfoItemTrue>
+                        ) : (
+                            <InfoItemFalse>
+                                <IconTwitter />Not Available
+                            </InfoItemFalse>
+                        )}
+                        {props.company ? (
+                            <InfoItemTrue>
+                                <IconCompany />{props.company}
+                            </InfoItemTrue>
+                        ) : (
+                            <InfoItemFalse>
+                                <IconCompany />Not Available
+                            </InfoItemFalse>
+                        )}
                     </div>
                 </div>
             </WrapperMainInfo>

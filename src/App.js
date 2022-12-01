@@ -35,6 +35,7 @@ function App() {
                 setError(true);
               } else {
                 setUserData(data);
+                console.log(userData)
                 setError(false);
               };
             });
