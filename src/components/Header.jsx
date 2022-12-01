@@ -28,8 +28,9 @@ const ThemeSwitcher = styled.span`
 
 const ThemeText = styled.span`
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     font-size: 12px;
+    margin-top: 7px;
 `;
 
 const ThemeIcon = styled.i`
@@ -37,8 +38,9 @@ const ThemeIcon = styled.i`
     margin-left: 10px;
 `;
 
-const Title = styled.h1`
+const Title = styled.h3`
     color: var(--header-color);
+    font-weight: 600;
 `;
 
 export const Header = () => {
