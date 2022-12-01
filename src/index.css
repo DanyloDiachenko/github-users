@@ -44,6 +44,9 @@ body[data-theme='dark'] {
   --shadow: 0;
   --search-color: var(--white);
   --date: var(--white);
+  --bio-color: var(--white);
+  --stat-bg: var(--gray-500);
+  --value-color: var(--white);
 }
 
 body[data-theme='light'] {
@@ -54,5 +57,8 @@ body[data-theme='light'] {
   --search-bg: var(--white);
   --shadow: var(var(--shadow));
   --search-color: var(--gray-300);
-  --date: var(--gray-100)
+  --date: var(--gray-100);
+  --bio-color: var(--gray-200);
+  --stat-bg: var(--gray-50);
+  --value-color: black;
 }
