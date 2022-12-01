@@ -85,17 +85,17 @@ const InfoItem = styled.span`
     margin-top: 15px;
 `;
 
-export const MainInfo = () => {
+export const MainInfo = (props) => {
     return (
         <Wrapper className="container row">
-            <div className="col-2">logophoto</div>
+            <div className="col-2"><img style={{borderRadius: '50%'}} src={props.avatar_url} alt="user-icon" /> logo</div>
             <div className="col-10 row p-0">
                 <div className='col-lg-7 col-md-12'>
-                    <Title>Global Fashion Group</Title>
-                    <Tag>@dsadasd</Tag>
+                    <Title>{props.name}</Title>
+                    <Tag>@{props.login}</Tag>
                 </div>
                 <div className='col-lg-5 col-md-12 p-0'>
-                    <DateJoin><span>Joined 16 Dec 2015</span></DateJoin>
+                    <DateJoin><span>{props.created_at}</span></DateJoin>
                 </div>
             </div>
             <WrapperMainInfo>
@@ -104,15 +104,15 @@ export const MainInfo = () => {
                     <MainInfoContainer className='row'>
                         <div className='col-4'>
                             <KeyInfo>Repos</KeyInfo>
-                            <ValueInfo>1</ValueInfo>
+                            <ValueInfo>{props.public_repos}</ValueInfo>
                         </div>
                         <div className='col-4'>
                             <KeyInfo>Following</KeyInfo>
-                            <ValueInfo>0</ValueInfo>
+                            <ValueInfo>{props.following}</ValueInfo>
                         </div>
                         <div className='col-4'>
                             <KeyInfo>Followers</KeyInfo>
-                            <ValueInfo>1</ValueInfo>
+                            <ValueInfo>{props.followers}</ValueInfo>
                         </div>
                     </MainInfoContainer>
                 </div>
