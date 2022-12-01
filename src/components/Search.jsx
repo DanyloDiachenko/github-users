@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     padding: 15px;
     border-radius: var(--border-rad);
     box-shadow: var(--shadow);
-    background-color: var(--search-bg)
+    background-color: var(--search-bg);
 `;
 
 const Input = styled.input.attrs({

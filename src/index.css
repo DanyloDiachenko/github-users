@@ -7,6 +7,7 @@ body {
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Space Mono', monospace;
 }
 
 :root {
@@ -52,8 +53,4 @@ body[data-theme='light'] {
   --search-bg: var(--white);
   --shadow: var(var(--shadow));
   --search-color: var(--gray-300);
-}
-
-a {
-  font-family: 'Space Mono', monospace;
 }
