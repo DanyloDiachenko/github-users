@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ReactComponent as IconSearch } from '../icons/icon-search.svg';
 
 const Wrapper = styled.div`
-    max-width: 690px;
+    max-width: 725px;
     width: 100%;
     margin: auto;
     display: flex;
@@ -18,7 +18,7 @@ const Input = styled.input.attrs({
 })`
     border: none;
     outline: none;
-    max-width: 450px;
+    max-width: 545px;
     width: 100%;
     font-size: 20px;
     color: var(--gray-200);
@@ -30,8 +30,15 @@ const Input = styled.input.attrs({
 const Button = styled.button`
     border: none; 
     background-color: var(--main-color);
-    border-radius: var(--border-rad);
+    border-radius: 10px;
     padding: 15px 25px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+        background-color: var(--main-color-hover);
+    };
 `;
 
 export const Search = () => {

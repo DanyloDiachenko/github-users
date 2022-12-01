@@ -4,7 +4,7 @@ import { ReactComponent as MoonIcon } from '../icons/icon-moon.svg';
 import { ReactComponent as SunIcon } from '../icons/icon-sun.svg';
 
 const Wrapper = styled.header`
-    max-width: 690px;
+    max-width: 725px;
     margin: 40px auto;
     display: flex;
     align-items: center;
