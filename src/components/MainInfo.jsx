@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     border-radius: var(--border-rad);
     box-shadow: var(--shadow);
     background-color: var(--search-bg);
-    padding: 30px;
+    padding: 20px;
 `;
 
 const Title = styled.h1`
@@ -18,20 +18,28 @@ const Title = styled.h1`
 `;
 
 const DateJoin = styled.span`
-    color: var(--date)
+    color: var(--date);
+    display: flex;
+    justify-content: end;
+`;
+
+const Tag = styled.div`
+    color: var(--main-color);
+    font-weight: 600;
 `;
 
 export const MainInfo = () => {
     return (
         <Wrapper className="container row">
-            <div className="col-lg-2 col-md-12">dasda</div>
-            <div className="col-lg-10 col-md-12 row">
-                <div className='col-lg-6 col-md-12'>
+            <div className="col-2">logophoto</div>
+            <div className="col-10 row p-0">
+                <div className='col-lg-7 col-md-12'>
                     <Title>Global Fashion Group</Title>
                 </div>
-                <div className='col-lg-6 col-md-12'>
-                    <DateJoin>Joined 16 Dec 2015</DateJoin>
+                <div className='col-lg-5 col-md-12 p-0'>
+                    <DateJoin><span>Joined 16 Dec 2015</span></DateJoin>
                 </div>
+                <div className='col-12'><Tag>@dsadasd</Tag></div>
             </div>
         </Wrapper>
     );
