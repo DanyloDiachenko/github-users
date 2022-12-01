@@ -13,6 +13,12 @@ const Wrapper = styled.div`
     background-color: var(--search-bg);
 `;
 
+const InputButtonWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+`;
+
 const Input = styled.input.attrs({
     placeholder: 'Search GitHub username...'
 })`
@@ -25,6 +31,16 @@ const Input = styled.input.attrs({
     margin-left: 25px;
     color: var(--search-color);
     background: initial;
+
+    @media(max-width: 767px) {
+        margin-left: 15px;
+    };
+    @media(max-width: 550px) {
+        font-size: 16px;
+    };
+    @media(max-width: 450px) {
+        font-size: 12px;
+    };
 `;
 
 const Button = styled.button`
@@ -35,6 +51,10 @@ const Button = styled.button`
     color: var(--white);
     cursor: pointer;
     font-size: 16px;
+
+    @media(max-width: 450px) {
+        padding: 10px 10px;
+    };
 
     &:hover {
         background-color: var(--main-color-hover);
@@ -52,11 +72,13 @@ export const Search = (props) => {
         <form onSubmit={(e) => { e.preventDefault() }}>
             <Wrapper>
                 <IconSearch />
-                <Input value={props.value} onChange={props.onChange} />
-                {props.error ? (
-                    <Error>No results</Error>
-                ) : <span style={{marginLeft: '105px'}}></span>}
-                <Button type='submit' onClick={props.onClick}>Search</Button>
+                <InputButtonWrapper>
+                    <Input value={props.value} onChange={props.onChange} />
+                    {props.error ? (
+                        <Error>No results</Error>
+                    ) : ''}
+                    <Button type='submit' onClick={props.onClick}>Search</Button>
+                </InputButtonWrapper>
             </Wrapper>
         </form>
     );
