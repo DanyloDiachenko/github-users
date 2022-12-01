@@ -7,7 +7,6 @@ import { ReactComponent as IconWebsite } from '../icons/icon-website.svg';
 const Wrapper = styled.div`
     max-width: 725px;
     width: 100%;
-    border: 2px solid red;
     margin: 20px auto;
     border-radius: var(--border-rad);
     box-shadow: var(--shadow);
@@ -123,7 +122,7 @@ const InfoItemTrue = styled.span`
     align-items: center;
     margin-top: 15px;
     color: var(--info-color);
-    font-size: 14px;
+    font-size: 13px;
     
     & > svg {
         width: 20px;
@@ -139,11 +138,7 @@ const InfoItemFalse = styled.span`
     margin-top: 15px;
     color: var(--info-color);
     opacity: 0.75;
-    font-size: 14px;
-
-    @media(max-width: 767px) {
-        font-size: 12px;
-    };
+    font-size: 13px;
 
     & > svg {
         width: 20px;
@@ -160,11 +155,11 @@ export const MainInfo = (props) => {
             <div className="col-2"><Image src={props.avatar_url} alt="user-icon" /></div>
             <div className="col-10 row">
                 <div className='col-lg-7 col-md-12'>
-                    <Title>{props.name}</Title>
+                    <Title>{props.name ? props.name : props.login}</Title>
                     <Tag href={props.html_url}>@{props.login}</Tag>
                 </div>
                 <div className='col-lg-5 col-md-12 p-0'>
-                    <DateJoin><span>Joined {props.createdAtDate} {props.createdAtMonth} {props.createdAtYear}</span></DateJoin>
+                    <DateJoin><span>Joined {props.created_at}</span></DateJoin>
                 </div>
             </div>
             <WrapperMainInfo>
@@ -188,7 +183,7 @@ export const MainInfo = (props) => {
                     </MainInfoContainer>
                 </div>
                 <div className='col-12 row'>
-                    <div className='col-lg-5 col-sm-12'>
+                    <div className='col-lg-6 col-sm-12'>
                         {props.location ? (
                             <InfoItemTrue>
                                 <IconLocation />{props.location}
@@ -208,7 +203,7 @@ export const MainInfo = (props) => {
                             </InfoItemFalse>
                         )}
                     </div>
-                    <div className='col-lg-5 col-sm-12'>
+                    <div className='col-lg-6 col-sm-12'>
                         {props.twitter_username ? (
                             <InfoItemTrue>
                                 <IconTwitter />{props.twitter_username}

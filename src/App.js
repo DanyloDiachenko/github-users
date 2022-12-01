@@ -26,8 +26,6 @@ function App() {
       .then(data => setUserData(data));
   }, []);
 
-  const { created_at } = userData;
-
   return (
     <WrapperMain>
       <Header />
@@ -43,7 +41,6 @@ function App() {
                 setError(true);
               } else {
                 setUserData(data);
-                console.log(userData)
                 setError(false);
               };
             });

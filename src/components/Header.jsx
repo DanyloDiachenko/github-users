@@ -48,7 +48,6 @@ export const Header = () => {
     const [theme, setTheme] = useState('light');
     useEffect(() => {
         document.body.setAttribute('data-theme', theme);
-        console.log(theme);
     }, [theme])
 
     return (
