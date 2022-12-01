@@ -30,7 +30,14 @@ function App() {
           setInputValue('');
           fetch(`https://api.github.com/users/${inputValue}`)
             .then(res => res.json())
-            .then(data => setUserData(data))
+            .then(data => {
+              if (data.message) {
+                setError(true);
+              } else {
+                setUserData(data);
+                setError(false);
+              };
+            });
         }}
         error={error}
       />
