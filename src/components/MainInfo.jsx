@@ -15,6 +15,12 @@ const Wrapper = styled.div`
     padding: 20px;
 `;
 
+const Image = styled.img`
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+`;
+
 const Title = styled.h1`
     color: var(--header-color);
     font-size: 24px;
@@ -37,9 +43,14 @@ const DateJoin = styled.span`
     };
 `;
 
-const Tag = styled.div`
+const Tag = styled.a`
     color: var(--main-color);
     font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--main-color-hover);
+    };
 `;
 
 const WrapperMainInfo = styled.div`
@@ -51,7 +62,9 @@ const WrapperMainInfo = styled.div`
 `;
 
 const IsDescription = styled.div`
-
+    font-size: 17px;
+    margin-top: 50px;
+    color: var(--description-color);
 `;
 const NoDescription = styled.p`
     margin-top: 50px;
@@ -88,18 +101,20 @@ const InfoItem = styled.span`
 export const MainInfo = (props) => {
     return (
         <Wrapper className="container row">
-            <div className="col-2"><img style={{borderRadius: '50%'}} src={props.avatar_url} alt="user-icon" /> logo</div>
+            <div className="col-2"><Image src={props.avatar_url} alt="user-icon" /></div>
             <div className="col-10 row p-0">
                 <div className='col-lg-7 col-md-12'>
                     <Title>{props.name}</Title>
-                    <Tag>@{props.login}</Tag>
+                    <Tag href={props.html_url}>@{props.login}</Tag>
                 </div>
                 <div className='col-lg-5 col-md-12 p-0'>
-                    <DateJoin><span>{props.created_at}</span></DateJoin>
+                    <DateJoin><span>Joined {props.createdAtDate} {props.createdAtMonth} {props.createdAtYear}</span></DateJoin>
                 </div>
             </div>
             <WrapperMainInfo>
-                <div className='col-12'><NoDescription>This profile has no bio</NoDescription></div>
+                <div className='col-12'>{!props.bio ? (
+                    <NoDescription>This profile has no bio</NoDescription>
+                ) : <IsDescription>{props.bio}</IsDescription>}</div>
                 <div className='col-12'>
                     <MainInfoContainer className='row'>
                         <div className='col-4'>

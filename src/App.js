@@ -16,15 +16,16 @@ function App() {
       .then(data => setUserData(data));
   }, []);
 
-  const { name, } = userData;
+  const { name, avatar_url, login, bio, created_at, public_repos, following, followers } = userData;
 
   return (
     <>
       <Header />
       <Search />
+      {console.log(userData)}
       <MainInfo
-        name={name}
-
+        {...userData}
+        
       />
     </>
   );
