@@ -8,7 +8,9 @@ import { MainInfo } from './components/MainInfo';
 
 function App() {
 
+  const [inputValue, setInputValue] = useState('');
   const [userData, setUserData] = useState('');
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch('https://api.github.com/users/danylodiachenko')
@@ -16,17 +18,25 @@ function App() {
       .then(data => setUserData(data));
   }, []);
 
-  const { name, avatar_url, login, bio, created_at, public_repos, following, followers } = userData;
+  const { created_at } = userData;
 
   return (
     <>
       <Header />
-      <Search />
-      {console.log(userData)}
-      <MainInfo
-        {...userData}
-        
+      <Search
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        onClick={() => {
+          setInputValue('');
+          fetch(`https://api.github.com/users/${inputValue}`)
+            .then(res => res.json())
+            .then(data => setUserData(data))
+        }}
+        error={error}
       />
+      {error == false ? (
+        <MainInfo {...userData} />
+      ) : ''}
     </>
   );
 }

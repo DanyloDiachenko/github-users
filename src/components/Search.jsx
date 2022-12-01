@@ -18,14 +18,13 @@ const Input = styled.input.attrs({
 })`
     border: none;
     outline: none;
-    max-width: 537px;
+    max-width: 428px;
     width: 100%;
     font-size: 20px;
     color: var(--gray-200);
     margin-left: 25px;
     color: var(--search-color);
     background: initial;
-    font-family: ;
 `;
 
 const Button = styled.button`
@@ -42,12 +41,23 @@ const Button = styled.button`
     };
 `;
 
-export const Search = () => {
+const Error = styled.div`
+    color: red;
+    font-weight: 600;
+    margin-right: 10px;
+`;
+
+export const Search = (props) => {
     return (
-        <Wrapper>
-            <IconSearch />
-            <Input />
-            <Button>Search</Button>
-        </Wrapper>
+        <form onSubmit={(e) => { e.preventDefault() }}>
+            <Wrapper>
+                <IconSearch />
+                <Input value={props.value} onChange={props.onChange} />
+                {props.error ? (
+                    <Error>No results</Error>
+                ) : <span style={{marginLeft: '105px'}}></span>}
+                <Button type='submit' onClick={props.onClick}>Search</Button>
+            </Wrapper>
+        </form>
     );
 };
