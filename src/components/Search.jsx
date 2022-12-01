@@ -18,13 +18,14 @@ const Input = styled.input.attrs({
 })`
     border: none;
     outline: none;
-    max-width: 545px;
+    max-width: 537px;
     width: 100%;
     font-size: 20px;
     color: var(--gray-200);
     margin-left: 25px;
     color: var(--search-color);
     background: initial;
+    font-family: ;
 `;
 
 const Button = styled.button`
