@@ -13,12 +13,21 @@ const Wrapper = styled.div`
     box-shadow: var(--shadow);
     background-color: var(--search-bg);
     padding: 20px;
+
+    @media(max-width: 991px) {
+        padding: 10px 0;
+    };
 `;
 
 const Image = styled.img`
     width: 80px;
     height: 80px;
     border-radius: 50%;
+
+    @media(max-width: 530px) {
+        width: 50px;
+        height: 50px;
+    }
 `;
 
 const Title = styled.h1`
@@ -29,6 +38,10 @@ const Title = styled.h1`
 
     @media(max-width: 991px) {
         margin-bottom: 0;
+    };
+
+    @media(max-width: 767px) {
+        font-size: 18px;
     };
 `;
 
@@ -41,6 +54,10 @@ const DateJoin = styled.span`
         justify-content: start;
         padding-left: 10px;
     };
+
+    @media(max-width: 767px) {
+        font-size: 13px;
+    };
 `;
 
 const Tag = styled.a`
@@ -50,6 +67,10 @@ const Tag = styled.a`
 
     &:hover {
         color: var(--main-color-hover);
+    };
+
+    @media(max-width: 767px) {
+        font-size: 13px;
     };
 `;
 
@@ -71,6 +92,10 @@ const NoDescription = styled.p`
     color: var(--bio-color);
     opacity: 0.75;
     font-size: 17px;
+
+    @media(max-width: 767px) {
+        font-size: 15px;
+    };
 `;
 
 const MainInfoContainer = styled.div`
@@ -101,6 +126,8 @@ const InfoItemTrue = styled.span`
     font-size: 14px;
     
     & > svg {
+        width: 20px;
+        height: 20px;
         fill: var(--info-color);
         margin-right: 20px;
     };
@@ -114,7 +141,13 @@ const InfoItemFalse = styled.span`
     opacity: 0.75;
     font-size: 14px;
 
+    @media(max-width: 767px) {
+        font-size: 12px;
+    };
+
     & > svg {
+        width: 20px;
+        height: 20px;
         fill: var(--info-color);
         opacity: 0.75;
         margin-right: 20px;
@@ -125,7 +158,7 @@ export const MainInfo = (props) => {
     return (
         <Wrapper className="container row">
             <div className="col-2"><Image src={props.avatar_url} alt="user-icon" /></div>
-            <div className="col-10 row p-0">
+            <div className="col-10 row">
                 <div className='col-lg-7 col-md-12'>
                     <Title>{props.name}</Title>
                     <Tag href={props.html_url}>@{props.login}</Tag>

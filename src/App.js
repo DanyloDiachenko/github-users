@@ -2,9 +2,17 @@ import { useState, useEffect } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import styled from 'styled-components';
+
 import { Header } from './components/Header';
 import { Search } from './components/Search';
 import { MainInfo } from './components/MainInfo';
+
+const WrapperMain = styled.main`
+  @media(max-width: 767px) {
+    padding: 0 8px;
+  };
+`;
 
 function App() {
 
@@ -21,7 +29,7 @@ function App() {
   const { created_at } = userData;
 
   return (
-    <>
+    <WrapperMain>
       <Header />
       <Search
         value={inputValue}
@@ -45,7 +53,7 @@ function App() {
       {error == false ? (
         <MainInfo {...userData} />
       ) : ''}
-    </>
+    </WrapperMain>
   );
 }
 
