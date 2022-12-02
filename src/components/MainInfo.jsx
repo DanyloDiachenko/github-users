@@ -159,7 +159,7 @@ export const MainInfo = (props) => {
                     <Tag href={props.html_url}>@{props.login}</Tag>
                 </div>
                 <div className='col-lg-5 col-md-12 p-0'>
-                    <DateJoin><span>Joined {props.created_at}</span></DateJoin>
+                    <DateJoin><span>Joined {props.day} {props.month} {props.year}</span></DateJoin>
                 </div>
             </div>
             <WrapperMainInfo>

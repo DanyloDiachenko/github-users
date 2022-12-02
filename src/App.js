@@ -26,6 +26,35 @@ function App() {
       .then(data => setUserData(data));
   }, []);
 
+  const { created_at } = userData;
+
+  const date = new Date(created_at);
+
+  const dateYear = date.getFullYear();
+  const dateNumber = date.getDay();
+  console.log(userData)
+  const dateMonth = date.getMonth();
+
+  console.log(dateMonth)
+
+  var arr = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sepr',
+    'Oct',
+    'Nov',
+    'De',
+  ];
+
+  const dateMonthName = arr[dateMonth]
+  console.log(dateMonthName)
+
   return (
     <WrapperMain>
       <Header />
@@ -42,13 +71,14 @@ function App() {
               } else {
                 setUserData(data);
                 setError(false);
+                console.log(created_at);
               };
             });
         }}
         error={error}
       />
       {error == false ? (
-        <MainInfo {...userData} />
+        <MainInfo {...userData} day={dateNumber} year={dateYear} month={dateMonthName} />
       ) : ''}
     </WrapperMain>
   );
