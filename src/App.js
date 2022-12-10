@@ -28,14 +28,12 @@ function App() {
 
   const { created_at } = userData;
 
-  const date = new Date(created_at);
+  let date = new Date(created_at);
 
   const dateYear = date.getFullYear();
   const dateNumber = date.getDay();
   console.log(userData)
   const dateMonth = date.getMonth();
-
-  console.log(dateMonth)
 
   var arr = [
     'Jan',
