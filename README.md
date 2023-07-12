@@ -1,6 +1,6 @@
 stage: production ready
 
-link: [[https://top-cources.vercel.app/](https://github-users-tau.vercel.app/)](https://github-users-tau.vercel.app/)
+link: [[https://top-cources.vercel.app/](https://github-users-tau.vercel.app/)]
 
 # Github Users / devfinder
 ### Stack:
