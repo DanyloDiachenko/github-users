@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import { ReactComponent as IconSearch } from '../icons/icon-search.svg';
+import styled from "styled-components";
+
+import { ReactComponent as IconSearch } from "../icons/icon-search.svg";
 
 const Wrapper = styled.div`
     max-width: 725px;
@@ -21,7 +22,7 @@ const InputButtonWrapper = styled.div`
 `;
 
 const Input = styled.input.attrs({
-    placeholder: 'Search GitHub username...'
+    placeholder: "Search GitHub username..."
 })`
     border: none;
     outline: none;
@@ -77,8 +78,8 @@ export const Search = (props) => {
                     <Input value={props.value} onChange={props.onChange} />
                     {props.error ? (
                         <Error>No results</Error>
-                    ) : ''}
-                    <Button type='submit' onClick={props.onClick}>Search</Button>
+                    ) : ""}
+                    <Button type="submit" onClick={props.onClick}>Search</Button>
                 </InputButtonWrapper>
             </Wrapper>
         </form>

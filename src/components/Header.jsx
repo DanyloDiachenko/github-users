@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { ReactComponent as MoonIcon } from '../icons/icon-moon.svg';
-import { ReactComponent as SunIcon } from '../icons/icon-sun.svg';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+import { ReactComponent as MoonIcon } from "../icons/icon-moon.svg";
+import { ReactComponent as SunIcon } from "../icons/icon-sun.svg";
 
 const Wrapper = styled.header`
     max-width: 725px;
@@ -44,18 +45,18 @@ const Title = styled.h3`
 `;
 
 export const Header = () => {
+    const [theme, setTheme] = useState("light");
 
-    const [theme, setTheme] = useState('light');
     useEffect(() => {
-        document.body.setAttribute('data-theme', theme);
+        document.body.setAttribute("data-theme", theme);
     }, [theme])
 
     return (
         <Wrapper>
             <Title>devfinder</Title>
-            <ThemeSwitcher onClick={() => setTheme(theme == 'light' ? 'dark' : 'light')}>
-                <ThemeText>{theme == 'light' ? 'Dark' : 'Light'}</ThemeText>
-                <ThemeIcon>{theme == 'light' ? <MoonIcon /> : <SunIcon />}</ThemeIcon>
+            <ThemeSwitcher onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+                <ThemeText>{theme === "light" ? "Dark" : "Light"}</ThemeText>
+                <ThemeIcon>{theme === "light" ? <MoonIcon /> : <SunIcon />}</ThemeIcon>
             </ThemeSwitcher>
         </Wrapper>
     );

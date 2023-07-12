@@ -1,8 +1,9 @@
-import styled from 'styled-components';
-import { ReactComponent as IconLocation } from '../icons/icon-location.svg';
-import { ReactComponent as IconTwitter } from '../icons/icon-twitter.svg';
-import { ReactComponent as IconCompany } from '../icons/icon-company.svg';
-import { ReactComponent as IconWebsite } from '../icons/icon-website.svg';
+import styled from "styled-components";
+
+import { ReactComponent as IconLocation } from "../icons/icon-location.svg";
+import { ReactComponent as IconTwitter } from "../icons/icon-twitter.svg";
+import { ReactComponent as IconCompany } from "../icons/icon-company.svg";
+import { ReactComponent as IconWebsite } from "../icons/icon-website.svg";
 
 const Wrapper = styled.div`
     max-width: 725px;
@@ -154,36 +155,36 @@ export const MainInfo = (props) => {
         <Wrapper className="container row">
             <div className="col-2"><Image src={props.avatar_url} alt="user-icon" /></div>
             <div className="col-10 row">
-                <div className='col-lg-7 col-md-12'>
+                <div className="col-lg-7 col-md-12">
                     <Title>{props.name ? props.name : props.login}</Title>
                     <Tag href={props.html_url}>@{props.login}</Tag>
                 </div>
-                <div className='col-lg-5 col-md-12 p-0'>
+                <div className="col-lg-5 col-md-12 p-0">
                     <DateJoin><span>Joined {props.day} {props.month} {props.year}</span></DateJoin>
                 </div>
             </div>
             <WrapperMainInfo>
-                <div className='col-12'>{!props.bio ? (
+                <div className="col-12">{!props.bio ? (
                     <NoDescription>This profile has no bio</NoDescription>
                 ) : <IsDescription>{props.bio}</IsDescription>}</div>
-                <div className='col-12'>
-                    <MainInfoContainer className='row'>
-                        <div className='col-4'>
+                <div className="col-12">
+                    <MainInfoContainer className="row">
+                        <div className="col-4">
                             <KeyInfo>Repos</KeyInfo>
                             <ValueInfo>{props.public_repos}</ValueInfo>
                         </div>
-                        <div className='col-4'>
+                        <div className="col-4">
                             <KeyInfo>Following</KeyInfo>
                             <ValueInfo>{props.following}</ValueInfo>
                         </div>
-                        <div className='col-4'>
+                        <div className="col-4">
                             <KeyInfo>Followers</KeyInfo>
                             <ValueInfo>{props.followers}</ValueInfo>
                         </div>
                     </MainInfoContainer>
                 </div>
-                <div className='col-12 row'>
-                    <div className='col-lg-6 col-sm-12'>
+                <div className="col-12 row">
+                    <div className="col-lg-6 col-sm-12">
                         {props.location ? (
                             <InfoItemTrue>
                                 <IconLocation />{props.location}
@@ -203,7 +204,7 @@ export const MainInfo = (props) => {
                             </InfoItemFalse>
                         )}
                     </div>
-                    <div className='col-lg-6 col-sm-12'>
+                    <div className="col-lg-6 col-sm-12">
                         {props.twitter_username ? (
                             <InfoItemTrue>
                                 <IconTwitter />{props.twitter_username}
