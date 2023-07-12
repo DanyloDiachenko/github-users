@@ -2,7 +2,7 @@ stage: production ready
 
 link: [https://top-cources.vercel.app/](https://github-users-tau.vercel.app/)
 
-# Top Cources
+# Github Users / devfinder
 ### Stack:
 - react (ver. 18.2.0)
 - react-dom (ver. 18.2.0)
