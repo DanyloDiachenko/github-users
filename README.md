@@ -1,6 +1,6 @@
 stage: production ready
 
-link: (https://github-users-tau.vercel.app/)
+link: https://github-users-tau.vercel.app/
 
 # Github Users / devfinder
 ### Stack:
