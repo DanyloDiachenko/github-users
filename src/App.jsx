@@ -17,8 +17,6 @@ const App = () => {
     const [userData, setUserData] = useState({});
     const [error, setError] = useState(false);
 
-    console.log(process.env.REACT_APP_API_URL);
-
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/danylodiachenko`)
             .then((res) => res.json())
@@ -60,7 +58,6 @@ const App = () => {
                 } else {
                     setUserData(data);
                     setError(false);
-                    console.log(created_at);
                 }
             });
     }
