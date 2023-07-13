@@ -15,4 +15,4 @@ link: https://github-users-tau.vercel.app/
 REACT_APP_API_URL=https://api.github.com/users
 
 ### Perfomance:
-[![Perfomance screen photo](https://i.imgur.com/27n6GCN.png)](https://i.imgur.com/27n6GCN.png)
+[![Perfomance screen photo](https://i.imgur.com/KiSgmmR.png)](https://i.imgur.com/KiSgmmR.png)
